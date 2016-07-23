@@ -1,0 +1,32 @@
+<html><!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <script>
+       setInterval("check_news()",1000);    //每隔一秒执行
+        function check_news(){
+            var xmlhttp;
+            if (window.XMLHttpRequest){
+                xmlhttp=new XMLHttpRequest();
+            }
+            else{
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function(){
+                if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                    if(xmlhttp.responseText>0){
+                        alert("有新消息");
+                        //location='message_deal.php';
+                    }else{
+                       // alert(xmlhttp.responseText);
+                    }
+                }
+            }
+            xmlhttp.open("GET","test.php?t=" + Math.random(),true);
+            xmlhttp.send();
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
