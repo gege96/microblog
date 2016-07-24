@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+    <link rel="stylesheet" type="text/css" href="../css/style1.css">
+    <link rel="stylesheet" type="text/css" href="css/style-responsive.css">
+    <script type="text/javascript" src="../js/login.js"></script>
+
+</head>
+<body  class="login-body">
+
+<div id="signin">
+    <div class="container">
+        <form class="signin" action="../check_login.php" method="post" >
+            <div class="signin-title-center">
+                <h1 class="write-style">登陆</h1>
+                <img src="../images/2.jpg" style="width:100px"  alt="">
+            </div>
+
+            <div  class="signin-middle-text">
+
+                <div class="form-input">
+                    <div class="form-icon"><img src="../images/username.png"></div>
+                    <input type="text" class="form-control" name="username" id="username" placeholder="用户名" autofocus onkeyup="showClear()"/>
+                    <div class="form-input-clear"><img id="username-clear" src="../images/off.png" onclick="clearUserName()"></div>
+                </div>
+
+
+                <div class="form-input">
+                    <div class="form-icon"><img src="../images/password.png"></div>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="请输入您的密码" onkeyup="showPwClear()"/>
+                    <div class="form-input-clear"><img src="../images/off.png" id="password-clear" onclick="clearPassword()"></div>
+                </div>
+
+                <button class="signin-bottom-btn" type="submit">
+                    <img src="../images/duihao.png" style="width:20px">
+                </button>
+
+                <div class="regiseter">
+                    Not a Member?
+                    <a class=".signup-text"  onclick="hideSignin()">Signup</a>
+                </div>
+
+
+                <label class="checkbox">
+                    <input type="checkbox" name="remember" value=1>Remember me
+                </label>
+            </div>
+
+
+        </form>
+    </div>
+
+</div>
+
+<div id="signup">
+    <div class="container">
+        <form class="signin" action="../reg.php" method="post">
+            <div class="signin-title-center">
+                <h1 class="write-style">注册</h1>
+                <img src="../images/1.png" style="width:100px"  alt="">
+            </div>
+
+            <div  class="signin-middle-text">
+
+                <div class="form-input">
+                    <div class="form-icon"><img src="../images/username.png"></div>
+                    <input type="text" class="form-control" name="signup-username" id="signup-username" placeholder="请输入用户名" autofocus onkeyup="showSignUpClear()"/>
+                    <div class="form-input-clear"><img id="signup-clear" src="../images/off.png" onclick="clearSignUpUserName()"></div>
+                </div>
+
+
+                <div class="form-input">
+                    <div class="form-icon"><img src="../images/password.png"></div>
+                    <input type="password" class="form-control" name="signup-password"
+                           id="signup-password" placeholder="请输入您的密码" onkeyup="showSignUpPwClear()"/>
+                    <div class="form-input-clear"><img src="../images/off.png" id="signup-password-clear" onclick="clearSignUpPassword()"></div>
+                </div>
+
+                <div class="form-input">
+                    <div class="form-icon"><img src="../images/password.png"></div>
+                    <input type="password" class="form-control" name="confirm-password"
+                           id="confirm-password" placeholder="请再次输入您的密码"
+                           onkeyup="showConfirmPwClear()"/>
+                    <div class="form-input-clear"><img src="../images/off.png"
+                                                       id="confirm-password-clear" onclick="clearConfirmPassword()"></div>
+                </div>
+
+                <div class="form-input">
+                    <div class="form-icon"><img src="../images/mail.png"></div>
+                    <input type="text" class="form-control" name="signup-email" id="signup-email" placeholder="请输入您的邮箱" onkeyup="showEmailClear()"/>
+                    <div class="form-input-clear"><img src="../images/off.png" id="email-clear" onclick="clearEmail()"></div>
+                </div>
+
+                <button class="signin-bottom-btn" type="submit">
+                    <img src="../images/duihao.png" style="width:20px">
+                </button><br>
+
+                <div class="back-class"  onclick="location.href='login.html'">
+                    <img src="../images/back.png" style="width:20px">
+                </div>
+
+            </div>
+
+
+        </form>
+    </div>
+
+</div>
+
+
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/modernizr.min.js"></script>
+
+
+</body>
+</html>

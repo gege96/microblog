@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <title></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/main.css" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script>
+
+        function check_news(){
+            var xmlhttp;
+            if (window.XMLHttpRequest){
+                xmlhttp=new XMLHttpRequest();
+            }
+            else{
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function(){
+                if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                    if(xmlhttp.responseText>0){
+                        alert("有新消息");
+                        location='../message/message_deal.php';
+                    }else{
+                        // alert(xmlhttp.responseText);
+                    }
+                }
+            }
+            xmlhttp.open("GET","../message/message_query.php?t=" + Math.random(),true);
+            xmlhttp.send();
+        }
+    </script>
+
+
+</head>
+
+<body onload="check_news()">
+
+
+<div class="container">
+    <div class="col-lg-6 col-lg-offset-3">
+
+        <!-- ===== vCard Navigation ===== -->
+        <div class="row w">
+
+
+            <!-- ===== vCard Content ===== -->
+            <div class="col-md-8">
+                <div class="tab-content">
+
+
+
+                    <!-- ===== Third Tab ===== -->
+                    <div class="tab-pane active" id="portfolio">
+                        <div class="row">
+                            <div class="col-xs-6 centered">
+                                <img class="img-responsive" src="../images/put.png" alt="">
+                                <a href="../function/blog_release.php"><h6><i class="icon-link"></i> 发布微博</h6></a>
+                            </div><!-- col-xs-6 -->
+                            <div class="col-xs-6 centered">
+                                <img class="img-responsive" src="../images/square.png" alt="">
+                                <a href="../function/blog_square.php"><h6><i class="icon-link"></i> 微博广场</h6></a>
+                            </div><!-- col-xs-6 -->
+                        </div><!-- row -->
+
+                        <div class="row">
+                            <br>
+                            <div class="col-xs-6 centered">
+                                <img class="img-responsive" src="../images/personal.png" alt="">
+                                <a href="../function/personal_blog.php"><h6><i class="icon-link"></i> 个人微博</h6></a>
+                            </div><!-- col-xs-6 -->
+                            <div class="col-xs-6 centered">
+                                <img class="img-responsive" src="../images/logout.png" alt="">
+                                <a href="logout.php?action=logout"><h6><i class="icon-link"></i> 注销</h6></a>
+                            </div><!-- col-xs-6 -->
+                        </div><!-- row -->
+                    </div><!-- /Tab Portfolio -->
+
+
+
+                </div><!-- Tab Content -->
+            </div><!-- col-md-8 -->
+        </div><!-- row w -->
+    </div><!-- col-lg-6 -->
+</div><!-- /.container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script>
+    $('#myTab a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+</script>
+
+</body>
+</html>
